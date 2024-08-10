@@ -1,0 +1,94 @@
+
+
+
+
+body {
+  background: linear-gradient(
+    135deg, /* Angle of gradient */
+    hsl(308, 61%, 20%) 0%, /* Last color at the top */
+    hsl(275, 95%, 62%) 25%, /* Base Purple */
+    hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+    hsl(308, 61%, 20%)  /* Light Purple 2 */
+  );
+  background-size: cover;
+}
+
+.authContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh; 
+   }
+  
+  
+   .heading{
+      
+   
+    font-size:x-large;
+    text-align: center;
+    color:#D292FF;
+    margin-bottom:1.5rem;
+    font-family:"Lucida Handwriting"
+    
+  }
+   .auth-form{
+    
+    display:flex;
+    flex-direction: column;
+    width:450px;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px blueviolet; 
+    background-color: black;
+    
+ }
+   label{
+    display:block;
+    margin-bottom: 1rem;
+   
+    color:whitesmoke;
+   }
+  .input{
+   
+    padding:.5rem;
+    margin-bottom:1rem;
+    
+
+  }
+  .error-msg{
+    color:red;
+    margin-top:0.5rem;
+    text-align: center;
+  }
+  .submit{
+    padding:10px;
+  
+    border:none;
+    cursor: pointer;
+    color:whitesmoke;
+    margin-top:1.5rem;
+    background: linear-gradient(
+      135deg, /* Angle of gradient */
+      hsl(308, 61%, 20%) 0%, /* Last color at the top */
+      hsl(275, 95%, 62%) 100%, /* Base Purple */
+      hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+      hsl(308, 61%, 20%)  /* Light Purple 2 */
+    );
+
+
+  }
+  .submit:hover{
+    background-color: #D292FF;;
+  }
+
+  
+  .signup-link{
+    margin-top:15px;
+    text-align: right;
+
+  }
+  .signup-link a{
+    color:whitesmoke;
+  }
+
+  

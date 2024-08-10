@@ -1,0 +1,91 @@
+
+
+
+
+.navigation{
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    text-decoration: underline;
+    margin-top:1rem;
+    padding-left: 1rem;
+    padding-right:1rem;
+
+    
+    
+}
+
+.submission-history-page{
+    display:flex;
+    flex-direction: column;   
+    align-items: center;
+    height:100vh;
+   
+    
+}
+/* Center the table within a container */
+.table-container {
+    display: flex;     
+   
+    overflow-y: auto; /* Enable vertical scrolling on the container */
+    max-height: 70%; 
+    max-width: 1200px;
+    border:none;
+   
+}
+.submission-heading{
+    font-size: xx-large;
+    color:white; 
+    width:fit-content;
+    font-family:"Lucida Handwriting";
+    margin-bottom:2rem;
+    margin-top:1rem;
+    
+    
+    
+}
+
+/* Define general table styling */
+.table-wide {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style the table header */
+.table-wide thead {
+    background: linear-gradient(
+      135deg, /* Angle of gradient */
+      hsl(308, 61%, 20%) 0%, /* Last color at the top */
+      hsl(275, 95%, 62%) 100%, /* Base Purple */
+      hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+      hsl(308, 61%, 20%)  /* Light Purple 2 */
+    );
+    color: white;
+    font-size: 1rem; /* Adjusted to match Table */
+}
+
+.table-wide thead th {
+    padding: 10px 14px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+/* Style the table body rows */
+.table-wide tbody tr {
+    background-color: #000; /* Black background */
+    color: white;
+    border-bottom: 1px solid #444; /* Dark border for contrast */
+}
+
+
+.table-wide tbody td {
+    padding: 12px 16px;
+    text-align: left;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Optional: Styling for no data available row */
+.table-wide tbody .no-data {
+    text-align: center;
+    padding: 12px 16px;
+}

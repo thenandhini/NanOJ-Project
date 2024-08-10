@@ -1,0 +1,196 @@
+
+
+
+
+body {
+  position: relative; /* Ensure positioning for absolute elements is relative to this container */
+  
+
+}
+
+
+.navigation-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 30px;
+  text-decoration: underline;  
+  color: black; 
+  
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+
+
+
+.problemContainer{
+  display:flex; 
+  height:100vh; 
+
+  justify-content: center;
+  align-items: center;
+  
+  }
+  
+
+   
+
+
+.child1{
+  display:flex; 
+  height:80%;
+  width:40%;
+  border-right:2px solid grey;
+  margin-left:2rem;
+  background-color: rgba(0, 0, 0, 0.912);
+  padding-left:2rem;
+  padding-top:3rem;
+  
+
+  color:white;
+  
+ 
+}
+.child2{
+  display:flex; 
+  height:80%;
+  width:40%;
+  border-right:2px solid grey;
+  flex-direction: column;
+ 
+ 
+  background-color: rgba(0, 0, 0, 0.912);
+ 
+  
+}
+
+.select-lang{
+  
+  height:10%;
+  border:2px solid black;
+  margin-top:1rem;
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom:5px;
+  background: linear-gradient(
+    135deg, /* Angle of gradient */
+    hsl(308, 61%, 20%) 0%, /* Last color at the top */
+    hsl(275, 95%, 62%) 100%, /* Base Purple */
+    hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+    hsl(308, 61%, 20%)  /* Light Purple 2 */
+  );
+  color:white
+
+ 
+
+}
+.select-lang option{
+  background-color: black;
+  color:white;
+}
+
+.code-box{
+  
+
+   
+
+    margin-left:1rem;
+    margin-top: 1rem;
+    margin-bottom:.5rem;
+    margin-right:1rem;
+
+
+    height:80%; /* Set your desired height */
+    overflow: auto; /* Show scrollbars when content overflows */
+    font-family: monospace; /* Monospaced font for code */
+    padding: 2rem;
+   
+    border:2px solid grey;
+    border-radius:2px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: black;
+    color:white;
+  
+  
+}
+.child3{
+  display:flex; 
+  height:80%;
+  width:20%;
+  border:none;
+  margin-right:2rem;
+  flex-direction: column;
+  color:red;
+  background-color:rgba(0, 0, 0, 0.912);  
+
+
+  
+  
+  
+  
+}
+
+.input-box,.output-box{
+  height:10%; 
+  margin-top:5rem;
+  margin-left:.5rem;
+  margin-right:.5rem;
+  color:black;
+  border:none;
+  border-radius:5px;
+  background: linear-gradient(
+      135deg, /* Angle of gradient */
+      hsl(308, 61%, 20%) 0%, /* Last color at the top */
+      hsl(275, 95%, 62%) 100%, /* Base Purple */
+      hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+      hsl(308, 61%, 20%)  /* Light Purple 2 */
+    );
+    
+
+}
+
+
+
+.operations{
+  display:flex;
+
+  
+}
+.final-button{
+  width:fit-content;
+  border:2px solid black;
+  padding:5px;
+  margin-top:8rem;
+  margin-left:7px;
+  margin-right:7px;
+  width:100%;
+  color:white;
+
+  border-radius: 5px;
+  background: linear-gradient(
+      135deg, /* Angle of gradient */
+      hsl(308, 61%, 20%) 0%, /* Last color at the top */
+      hsl(275, 95%, 62%) 100%, /* Base Purple */
+      hsl(275, 95%, 72%) 0%, /* Light Purple 1 */
+      hsl(308, 61%, 20%)  /* Light Purple 2 */
+    );
+    
+  
+
+  
+
+}
+
+.submission-status{
+  margin-top:1.5rem;
+  text-align: center;
+}
+
+
+
+
+
+
+

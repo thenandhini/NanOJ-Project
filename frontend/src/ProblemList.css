@@ -1,0 +1,69 @@
+
+
+
+
+
+
+.problem-list-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Add some padding for better spacing */
+    background: linear-gradient(
+      135deg, /* Angle of gradient */
+      hsl(308, 61%, 20%) 0%, /* Last color at the top */
+      hsl(275, 95%, 62%) 25%, /* Base Purple */
+      hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
+      hsl(308, 61%, 20%)  /* Light Purple 2 */
+    );
+    background-size: cover;
+}
+
+.title-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /* Full width to accommodate button and title */
+    max-width: 1200px; /* Optional max-width to prevent stretching */
+    margin-bottom: 20px; /* Space below the title section */
+}
+
+.problem-list-heading {
+    font-size: 2rem; /* Larger font size for heading */
+    font-family: "Lucida Handwriting";
+    color: white;
+    
+    
+}
+
+.submission-history-button 
+{
+    
+       
+        border: none;
+        cursor: pointer;
+        color:black;
+        text-decoration: underline;
+      
+        font-style: oblique 23deg;
+       
+        font-size: 1rem; /* Smaller font size for compactness */
+       
+    }
+    
+ 
+
+.problem-list {
+    width: 100%; /* Full width of container */
+    max-width: 1200px; /* Max width to align with title-elements */
+}
+
+/* Optional styling for the table container */
+.table-container {
+   
+    display: flex;
+    justify-content: center; /* Center the table */
+    width: 100%;
+}
