@@ -16,7 +16,7 @@ const Table = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.VITE_API_URL}/problems`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/problems`);
                 setItems(response.data);
                 //console.log(response.data);
             } catch (error) {

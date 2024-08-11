@@ -39,7 +39,7 @@ const prodOrigins = [
   app.use(
     cors({
       origin: (origin, callback) => {
-        // if (process.env.NODE_ENV === 'production') {
+       
           if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
           } else {
