@@ -7,6 +7,8 @@ import '../ProblemList.css'
 
 
 import { useNavigate } from 'react-router-dom';
+//change
+const apiUrl=import.meta.env.VITE_API_URL;
 
 const Table = () => {
     const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -16,7 +18,7 @@ const Table = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_API_URL}/problems`);
+                const response = await axios.get(`${apiUrl}/problems`);
                 setItems(response.data);
                 //console.log(response.data);
             } catch (error) {
