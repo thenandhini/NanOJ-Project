@@ -18,7 +18,7 @@ const SubmissionHistoryTable = () => {
                 const userId = localStorage.getItem('userId'); // Get user ID from localStorage
                 console.log(userId);
                 const token = localStorage.getItem('token'); // Get token from localStorage
-                const response = await axios.get(`http://localhost:8000/user/${userId}/submissions`, {
+                const response = await axios.get(`${process.env.VITE_API_URL}/user/${userId}/submissions`, {
                     headers: {
                         'Authorization': `Bearer ${token}`,
                     },

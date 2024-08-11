@@ -44,7 +44,7 @@ function Compiler() {
     };
 
     try {
-      const { data } = await axios.post('http://localhost:8000/run', payload);
+      const { data } = await axios.post(`${process.env.VITE_API_URL}/run`, payload);
       console.log(data);
       setOutput(data.output);
     } catch (error) {
@@ -62,7 +62,7 @@ function Compiler() {
         const token = localStorage.getItem('token'); // Retrieve token from storage
         console.log("Token stored", token);
 
-        const response = await axios.post(`http://localhost:8000/problems/${problemId}/submissions`, payload, {
+        const response = await axios.post(`${process.env.VITE_API_URL}/problems/${problemId}/submissions`, payload, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             }

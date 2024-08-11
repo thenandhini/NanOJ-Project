@@ -26,12 +26,34 @@ const{executeFile}=require('./executeFile.js');
 
 const cors = require('cors');
 
-app.use(cors({
-    origin:[ 'http://localhost:5173', 'http://localhost:5175','https://nan-oj-project.vercel.app/','https://nan-oj-project-gs95ohfz3-nandhinihgrs-projects.vercel.app/'],
-    credentials: true,
-    methods: ['GET', 'POST', 'OPTIONS'],
-}));
 
+
+const prodOrigins = [
+    "https://nan-oj-project-git-main-nandhinihgrs-projects.vercel.app",
+   "https://nan-oj-project.vercel.app/",
+    "https://nan-oj-project.vercel.app",
+    "https://nan-oj-project-git-main-nandhinihgrs-projects.vercel.app/"
+  ];
+
+  const allowedOrigins = prodOrigins;
+  app.use(
+    cors({
+      origin: (origin, callback) => {
+        // if (process.env.NODE_ENV === 'production') {
+          if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+          } else {
+            callback(new Error(`${origin} not allowed by cors`));
+          }
+        // } else {
+        //   callback(null, true);
+        // }
+      },
+      optionsSuccessStatus: 200,
+      credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    }),
+  );
 
 //mildwares
 app.use(express.json()); //to convert data into json format
