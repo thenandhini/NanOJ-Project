@@ -27,7 +27,7 @@ const{executeFile}=require('./executeFile.js');
 const cors = require('cors');
 
 app.use(cors({
-    origin:[ 'http://localhost:5173', 'http://localhost:5175'],
+    origin:[ 'http://localhost:5173', 'http://localhost:5175','https://nan-oj-project.vercel.app/','https://nan-oj-project-gs95ohfz3-nandhinihgrs-projects.vercel.app/'],
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS'],
 }));
