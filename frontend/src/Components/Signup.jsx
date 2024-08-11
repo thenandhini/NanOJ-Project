@@ -57,7 +57,7 @@ function Signup({ setOutput }) {
       />
       <button className="submit " type='submit'>Signup</button>
       <p className="signup-link">
-        <Link to="/login">Already have an account?Login</Link>
+        <Link to="/">Already have an account?Login</Link>
       </p>
     </form>
 

@@ -67,19 +67,29 @@ body {
     cursor: pointer;
     color:whitesmoke;
     margin-top:1.5rem;
+    transition: .5s ease;
     background: linear-gradient(
-      135deg, /* Angle of gradient */
-      hsl(308, 61%, 20%) 0%, /* Last color at the top */
-      hsl(275, 95%, 62%) 100%, /* Base Purple */
-      hsl(275, 95%, 72%) 50%, /* Light Purple 1 */
-      hsl(308, 61%, 20%)  /* Light Purple 2 */
-    );
-
+    135deg,
+    hsl(308, 61%, 20%) 0%,
+    hsl(275, 95%, 62%) 100%,
+    hsl(275, 95%, 72%) 50%,
+    hsl(308, 61%, 20%)
+  );
+    
+   
 
   }
   .submit:hover{
-    background-color: #D292FF;;
+    background: linear-gradient(
+    135deg,
+    hsl(308, 61%, 25%) 0%,
+    hsl(275, 95%, 67%) 100%,
+    hsl(275, 95%, 77%) 50%,
+    hsl(308, 61%, 25%)
+  );
   }
+ 
+ 
 
   
   .signup-link{
