@@ -21,11 +21,34 @@ function Signup({ setOutput }) {
     };
 
     try {
-      const { data } = await axios.post(`${apiUrl}/signup`, payload);
+      const { data, status } = await axios.post(`${apiUrl}/signup`, payload);
       console.log(data);
-      setOutput(data.output);
+  
+      // Check for successful registration
+      if (status === 201) {
+        setOutput(data.output);
+        setErrorMsg('Successfully registered. Login to continue.');
+      } else if(status==200){
+        setErrorMsg('Unexpected status code received.');
+      }
     } catch (error) {
       console.log(error.response);
+  
+      // Handle different status codes
+      if (error.response) {
+        const { status } = error.response;
+        if (status === 400) {
+          setErrorMsg('Please enter all the fields!');
+        } else if (status === 409) {
+          setErrorMsg('User already exists. Please Login.');
+        } else if (status === 500) {
+          setErrorMsg('An error occurred on the server. Please try again!');
+        } else {
+          setErrorMsg('An unexpected error occurred. Please try again!');
+        }
+      } else {
+        setErrorMsg('An error occurred. Please try again!');
+      }
     }
   };
 

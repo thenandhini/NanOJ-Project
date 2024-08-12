@@ -113,64 +113,31 @@ app.post("/run",async(req,res)=>{
 
 app.post("/signup",async (req,res)=>
 {
-
-    console.log(req);
-   try {
-    //receive all the data from req body
-    const {name,email,password}=req.body;
-
-    //make sure all the fields are filled
-    if(!(name && email && password ))
-    {
-       return res.send("Please enter all the fields!");
-    }
-
-    //check if already registered-->database connection 
-    const existingUser= await User.findOne({email});
-    if(existingUser)
-    {
-        return res.send("User already exist!");
-    }   
-
-
-    //encrypt the password using bcrypt
-    const hashPassword = bcrypt.hashSync(password,5);
-    console.log(hashPassword);
-
-    //store the data in database
-    const user= await User.create(
-        {
-            name,
-            email,
-            password:hashPassword,
-
-
+    const { name, email, password } = req.body;
+    try{
+        if (!(name && email && password)) {
+          return res.status(400).json({ error: "Please enter all the fields!" });
         }
-    );
-
-    //print in the console
-    console.log(user);
-    //console.log(user);
-
-    //give token to the user
-    const token=jwt.sign({id:user._id,email},process.env.SECRET_KEY,{
-        expiresIn: "2h",
+    
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+          return res.status(409).json({ error: "User already exists!" });
+        }
+    
+        const hashPassword = bcrypt.hashSync(password, 5);
+        const user = await User.create({ name, email, password: hashPassword });
+    
+        const token = jwt.sign({ id: user._id, email }, process.env.SECRET_KEY, { expiresIn: "2h" });
+        user.token = token;
+        user.password = undefined;
+    
+        res.status(201).json({ message: "You have successfully registered!", user });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "An error occurred. Please try again!" });
+      }
+    
     });
-
-    user.token=token;   
-    user.password=undefined;
-
-    //send response
-    res.status(201).json({
-        message:"You hav successfully registered!",
-        user
-
-    });    
-} 
-   catch (error) {
-    console.error(error);
-    }
-});
 
 app.post("/login",async (req,res)=>
 {   

@@ -25,20 +25,33 @@ function Login({ setOutput }) {
 
     try {
       const { data } = await axios.post(`${apiUrl}/login`, payload);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('userId',data.userId);
-     console.log(data);
-      setOutput(data.output);
-      navigate('/problemlist');
-      
     
+      // Assuming successful login if `data.token` is present
+      if (data.token) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('userId', data.userId);
+        console.log(data);
+        setOutput(data.output);
+        navigate('/problemlist');
+      }
+       else {
+        // Handle unexpected responses or invalid credentials
+        setErrorMsg('Login failed. Please check your credentials.');
+      }
+  
     } catch (error) {
       console.log(error.response);
-      if(error.response && error.response.status===401)
-        setErrorMsg('Invalid Credentials,kindly recheck')
-      else
-      setErrorMsg('An Error occurred,Please try again! ')
+      if (error.response && error.response.status === 401) {
+        setErrorMsg('Invalid credentials, kindly recheck.');
+      } else if (error.response && error.response.status === 404) {
+        setErrorMsg('User not found. Please check your email.');
+      } else {
+        setErrorMsg('An error occurred. Please try again!');
+      }
     }
+      
+      
+      
   };
 
   return (
