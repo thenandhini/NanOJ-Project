@@ -79,8 +79,9 @@ function Signup({ setOutput }) {
         placeholder='Password'
         onChange={(event) => setPassword(event.target.value)}
       />
-      <button className="submit " type='submit'>Signup</button>
       {errorMsg && <p className="error-msg">{errorMsg}</p>}
+      <button className="submit " type='submit'>Signup</button>
+      
       <p className="signup-link">
         <Link to="/">Already have an account?Login</Link>
       </p>
