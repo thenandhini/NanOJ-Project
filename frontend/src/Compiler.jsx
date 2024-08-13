@@ -77,7 +77,8 @@ function Compiler() {
         }
     } catch (error) {
       if (error.response && error.response.status === 500) {
-        setSubmissionStatus('Compiler Error')};
+        setSubmissionStatus('Compiler Error');
+      }
         else{
 
         
