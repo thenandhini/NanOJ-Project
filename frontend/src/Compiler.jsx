@@ -146,8 +146,8 @@ const handleBackToProblemList=()=>{
 
          
           {submissionStatus && (
-            <div className="submission-status">    
-            
+            <div className="submission-status"> 
+             <h1>Staus:</h1>               
               <p>{submissionStatus}</p>            
             </div>
           )}
