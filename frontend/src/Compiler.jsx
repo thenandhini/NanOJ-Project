@@ -40,6 +40,10 @@ function Compiler() {
       console.log(data);
       setOutput(data.output);
     } catch (error) {
+      if (error.response && error.response.status === 500) {
+        
+        setSubmissionStatus('Compiler Error');
+    } else
       console.log(error.response);
     }
   };
@@ -75,16 +79,11 @@ function Compiler() {
            
             setSubmissionStatus('No results found');
         }
-    } catch (error) {
-      if (error.response && error.response.status === 500) {
-        setSubmissionStatus('Compiler Error');
-      }
-        else{
-
-        
+    } catch (error) {       
+      
         console.error('Error fetching problem details:', error);
         setSubmissionStatus('Submission failed');
-        }
+        
     }
 }
 
