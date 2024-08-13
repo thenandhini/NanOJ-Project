@@ -40,13 +40,16 @@ function Compiler() {
       console.log(data);
       setOutput(data.output);
     } catch (error) {
-      if (error.response && error.response.status === 500) {
-           
-        setSubmissionStatus('Compiler Error');
-    } else
+      if (error.response) {
+        if (error.response.status === 500) {
+          setSubmissionStatus('Compiler Error');
+        } else {
+          setSubmissionStatus('Error: ' + error.response.status);
+        }
+      } else {
+        setSubmissionStatus('Network Error');
+      }
       console.log(error.response);
-      setSubmissionStatus('Error');
-      
     }
   };
 
