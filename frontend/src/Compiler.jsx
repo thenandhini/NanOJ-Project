@@ -17,15 +17,7 @@ function Compiler() {
   const location = useLocation();
   const { problemId } = useParams();
   const [code, setCode] = useState(
-    `// Your First C++ Program
-      #include <iostream>
-      int main() {
-       std::cout << "Hello Hayagreevar! ,Welcome";
-       int a, b;
-       std::cin >> a >> b;
-       std::cout << a + b;
-       return 0;
-      }`
+    ``
   );
   const navigate=useNavigate();
   const [output, setOutput] = useState('');
