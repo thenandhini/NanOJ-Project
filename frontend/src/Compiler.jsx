@@ -23,6 +23,7 @@ function Compiler() {
   const [output, setOutput] = useState('');
   const [input, setInput] = useState('');
   const [submissionStatus, setSubmissionStatus] = useState(''); // State for storing submission status
+  const [runTimeStatus,setRunTimeStatus]=useState('');
   const description = location.state?.description || '';
  
 
@@ -41,10 +42,11 @@ function Compiler() {
       setOutput(data.output);
     } catch (error) {
       if (error.response && error.response.status === 500) {
-        
-        setSubmissionStatus('Compiler Error');
+           
+        setRunTimeStatus('Compiler Error');
     } else
       console.log(error.response);
+      setRunTimeStatus(error.response);
     }
   };
 
@@ -132,19 +134,27 @@ const handleBackToProblemList=()=>{
             onChange={e => setInput(e.target.value)}
             className="output-box text-white placeholder:text-white pl-4"
           />
+
+
           <div className="operations">
             <button className='final-button' onClick={handleRun}>Run</button>
             <button className='final-button' onClick={handleSubmit}>Submit</button>
           </div>
 
-          
+          {runTimeStatus && (
+            <div className="submission-status">
+              <p>{runTimeStatus}</p>
+            
+            </div>
+          )}
           {submissionStatus && (
             <div className="submission-status">
-              <h3>Submission Status:</h3>
+             {/* <h3>Submission Status:</h3> */}
               <p>{submissionStatus}</p>
             
             </div>
           )}
+           
         </div>
       </div>
     </div>
