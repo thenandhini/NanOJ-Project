@@ -32,7 +32,9 @@ const prodOrigins = [
     "https://nan-oj-project-git-main-nandhinihgrs-projects.vercel.app",
    "https://nan-oj-project.vercel.app/",
     "https://nan-oj-project.vercel.app",
-    "https://nan-oj-project-git-main-nandhinihgrs-projects.vercel.app/"
+    "https://nan-oj-project-git-main-nandhinihgrs-projects.vercel.app/",
+    "https://nanoj.online",
+    
   ];
 
   const allowedOrigins = prodOrigins;
